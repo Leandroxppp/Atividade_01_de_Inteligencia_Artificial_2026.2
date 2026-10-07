@@ -1,0 +1,40 @@
+REGRAS GERADAS PELO PRISM
+==============================================================
+
+R1: SE worst radius = alto E concavity error = alto ENTAO classe = malignant
+R2: SE worst radius = alto E mean texture = alto ENTAO classe = malignant
+R3: SE worst concave points = alto E worst area = alto ENTAO classe = malignant
+R4: SE worst concave points = alto E mean texture = alto ENTAO classe = malignant
+R5: SE worst perimeter = alto E mean concave points = baixo ENTAO classe = malignant
+R6: SE worst perimeter = alto E mean symmetry = alto E mean texture = medio ENTAO classe = malignant
+R7: SE worst concave points = alto E worst texture = alto ENTAO classe = malignant
+R8: SE worst concave points = alto E worst symmetry = alto E area error = medio ENTAO classe = malignant
+R9: SE worst radius = alto E worst texture = medio ENTAO classe = malignant
+R10: SE worst radius = alto E mean texture = medio E mean symmetry = baixo ENTAO classe = malignant
+R11: SE area error = alto E worst smoothness = alto ENTAO classe = malignant
+R12: SE area error = alto E worst concavity = alto E mean radius = medio ENTAO classe = malignant
+R13: SE area error = alto E mean smoothness = medio E mean compactness = baixo ENTAO classe = malignant
+R14: SE mean concave points = alto E worst texture = alto ENTAO classe = malignant
+R15: SE worst texture = alto E texture error = baixo E compactness error = baixo ENTAO classe = malignant
+R16: SE worst smoothness = alto E mean radius = medio E mean compactness = baixo ENTAO classe = malignant
+R17: SE worst perimeter = baixo E worst area = baixo ENTAO classe = benign
+R18: SE worst concavity = baixo E mean radius = medio ENTAO classe = benign
+R19: SE mean concave points = baixo E texture error = medio ENTAO classe = benign
+R20: SE worst area = baixo E mean concave points = medio ENTAO classe = benign
+R21: SE area error = baixo E worst concavity = medio ENTAO classe = benign
+R22: SE worst concavity = baixo E mean texture = baixo ENTAO classe = benign
+R23: SE worst concave points = baixo E area error = medio ENTAO classe = benign
+R24: SE worst perimeter = baixo E mean texture = alto ENTAO classe = benign
+R25: SE worst texture = baixo E mean compactness = medio ENTAO classe = benign
+R26: SE worst radius = medio E worst area = alto ENTAO classe = benign
+R27: SE mean concave points = baixo E mean compactness = medio ENTAO classe = benign
+R28: SE worst area = baixo E mean radius = medio ENTAO classe = benign
+R29: SE worst radius = medio E mean smoothness = baixo E mean concave points = medio ENTAO classe = benign
+R30: SE worst texture = baixo E mean compactness = baixo ENTAO classe = benign
+R31: SE area error = baixo E mean texture = baixo ENTAO classe = benign
+R32: SE worst concavity = baixo E mean smoothness = alto ENTAO classe = benign
+R33: SE worst radius = medio E worst texture = baixo E perimeter error = alto ENTAO classe = benign
+R34: SE worst radius = medio E worst fractal dimension = medio E mean texture = medio ENTAO classe = benign
+R35: SE mean smoothness = baixo E mean fractal dimension = alto ENTAO classe = benign
+R36: SE concave points error = baixo E mean texture = baixo ENTAO classe = benign
+R37: SE mean compactness = baixo E compactness error = medio ENTAO classe = benign

@@ -1,0 +1,21 @@
+{
+  "facts": [
+    "animal_amamenta",
+    "animal_tem_pelos"
+  ],
+  "rules": [
+    {
+      "if": [
+        "animal_tem_pelos",
+        "animal_amamenta"
+      ],
+      "then": "animal_e_mamifero"
+    },
+    {
+      "if": [
+        "animal_e_mamifero"
+      ],
+      "then": "animal_e_vertebrado"
+    }
+  ]
+}

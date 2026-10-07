@@ -1,0 +1,18 @@
+REGRAS EXTRAIDAS DA ARVORE DE DECISAO
+======================================================================
+
+R1: SE worst radius <= 16.7950 E worst concave points <= 0.1359 E area error <= 91.5550 E area error <= 38.6050 E smoothness error <= 0.0033 ENTAO classe = benign
+R2: SE worst radius <= 16.7950 E worst concave points <= 0.1359 E area error <= 91.5550 E area error <= 38.6050 E smoothness error > 0.0033 ENTAO classe = benign
+R3: SE worst radius <= 16.7950 E worst concave points <= 0.1359 E area error <= 91.5550 E area error > 38.6050 E texture error <= 2.0070 ENTAO classe = benign
+R4: SE worst radius <= 16.7950 E worst concave points <= 0.1359 E area error <= 91.5550 E area error > 38.6050 E texture error > 2.0070 ENTAO classe = malignant
+R5: SE worst radius <= 16.7950 E worst concave points <= 0.1359 E area error > 91.5550 ENTAO classe = malignant
+R6: SE worst radius <= 16.7950 E worst concave points > 0.1359 E worst texture <= 25.6200 E worst smoothness <= 0.1786 E worst area <= 817.1000 ENTAO classe = benign
+R7: SE worst radius <= 16.7950 E worst concave points > 0.1359 E worst texture <= 25.6200 E worst smoothness <= 0.1786 E worst area > 817.1000 ENTAO classe = malignant
+R8: SE worst radius <= 16.7950 E worst concave points > 0.1359 E worst texture <= 25.6200 E worst smoothness > 0.1786 ENTAO classe = malignant
+R9: SE worst radius <= 16.7950 E worst concave points > 0.1359 E worst texture > 25.6200 E worst symmetry <= 0.2682 E mean perimeter <= 94.1500 ENTAO classe = benign
+R10: SE worst radius <= 16.7950 E worst concave points > 0.1359 E worst texture > 25.6200 E worst symmetry <= 0.2682 E mean perimeter > 94.1500 ENTAO classe = malignant
+R11: SE worst radius <= 16.7950 E worst concave points > 0.1359 E worst texture > 25.6200 E worst symmetry > 0.2682 ENTAO classe = malignant
+R12: SE worst radius > 16.7950 E texture error <= 0.4731 ENTAO classe = benign
+R13: SE worst radius > 16.7950 E texture error > 0.4731 E worst concavity <= 0.1907 E mean texture <= 21.3500 ENTAO classe = benign
+R14: SE worst radius > 16.7950 E texture error > 0.4731 E worst concavity <= 0.1907 E mean texture > 21.3500 ENTAO classe = malignant
+R15: SE worst radius > 16.7950 E texture error > 0.4731 E worst concavity > 0.1907 ENTAO classe = malignant

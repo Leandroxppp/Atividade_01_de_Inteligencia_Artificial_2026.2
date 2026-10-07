@@ -1,0 +1,16 @@
+Accuracy: 0.9211
+Precision: 0.9565
+Recall: 0.9167
+F1-score: 0.9362
+
+Observacao: no dataset do scikit-learn, classe 1 = benign;
+por isso Precision/Recall/F1 binarios acima usam benign como classe positiva.
+
+              precision    recall  f1-score   support
+
+   malignant       0.87      0.93      0.90        42
+      benign       0.96      0.92      0.94        72
+
+    accuracy                           0.92       114
+   macro avg       0.91      0.92      0.92       114
+weighted avg       0.92      0.92      0.92       114

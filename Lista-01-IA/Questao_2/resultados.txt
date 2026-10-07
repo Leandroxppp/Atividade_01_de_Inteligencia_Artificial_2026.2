@@ -1,0 +1,82 @@
+======================================================================
+ID3
+======================================================================
+Patrimonio?
+|- Baixo
+|  => Alto
+|- Medio
+|  Emprego?
+|  |- Estavel
+|  |  Renda?
+|  |  |- 15-35k
+|  |  |  => Moderado
+|  |  |- >35k
+|  |  |  Historia_Credito?
+|  |  |  |- Ruim
+|  |  |  |  => Moderado
+|  |  |  |- Boa
+|  |  |  |  => Baixo
+|  |- Instavel
+|  |  => Alto
+|- Alto
+|  => Baixo
+
+REGRAS
+R1: SE Patrimonio = Baixo ENTAO Risco = Alto
+R2: SE Patrimonio = Medio E Emprego = Estavel E Renda = 15-35k ENTAO Risco = Moderado
+R3: SE Patrimonio = Medio E Emprego = Estavel E Renda = >35k E Historia_Credito = Ruim ENTAO Risco = Moderado
+R4: SE Patrimonio = Medio E Emprego = Estavel E Renda = >35k E Historia_Credito = Boa ENTAO Risco = Baixo
+R5: SE Patrimonio = Medio E Emprego = Instavel ENTAO Risco = Alto
+R6: SE Patrimonio = Alto ENTAO Risco = Baixo
+
+======================================================================
+C4.5
+======================================================================
+Emprego?
+|- Instavel
+|  => Alto
+|- Estavel
+|  Patrimonio?
+|  |- Medio
+|  |  Renda?
+|  |  |- 15-35k
+|  |  |  => Moderado
+|  |  |- >35k
+|  |  |  Historia_Credito?
+|  |  |  |- Ruim
+|  |  |  |  => Moderado
+|  |  |  |- Boa
+|  |  |  |  => Baixo
+|  |- Alto
+|  |  => Baixo
+
+REGRAS
+R1: SE Emprego = Instavel ENTAO Risco = Alto
+R2: SE Emprego = Estavel E Patrimonio = Medio E Renda = 15-35k ENTAO Risco = Moderado
+R3: SE Emprego = Estavel E Patrimonio = Medio E Renda = >35k E Historia_Credito = Ruim ENTAO Risco = Moderado
+R4: SE Emprego = Estavel E Patrimonio = Medio E Renda = >35k E Historia_Credito = Boa ENTAO Risco = Baixo
+R5: SE Emprego = Estavel E Patrimonio = Alto ENTAO Risco = Baixo
+
+======================================================================
+CART
+======================================================================
+|--- cat__Emprego_Instavel <= 0.50
+|   |--- cat__Patrimonio_Medio <= 0.50
+|   |   |--- class: Baixo
+|   |--- cat__Patrimonio_Medio >  0.50
+|   |   |--- cat__Renda_15-35k <= 0.50
+|   |   |   |--- cat__Historia_Credito_Boa <= 0.50
+|   |   |   |   |--- class: Moderado
+|   |   |   |--- cat__Historia_Credito_Boa >  0.50
+|   |   |   |   |--- class: Baixo
+|   |   |--- cat__Renda_15-35k >  0.50
+|   |   |   |--- class: Moderado
+|--- cat__Emprego_Instavel >  0.50
+|   |--- class: Alto
+
+REGRAS
+R1: SE Emprego_Instavel <= 0.50 E Patrimonio_Medio <= 0.50 ENTAO Risco = Baixo
+R2: SE Emprego_Instavel <= 0.50 E Patrimonio_Medio > 0.50 E Renda_15-35k <= 0.50 E Historia_Credito_Boa <= 0.50 ENTAO Risco = Moderado
+R3: SE Emprego_Instavel <= 0.50 E Patrimonio_Medio > 0.50 E Renda_15-35k <= 0.50 E Historia_Credito_Boa > 0.50 ENTAO Risco = Baixo
+R4: SE Emprego_Instavel <= 0.50 E Patrimonio_Medio > 0.50 E Renda_15-35k > 0.50 ENTAO Risco = Moderado
+R5: SE Emprego_Instavel > 0.50 ENTAO Risco = Alto
